@@ -45,12 +45,10 @@ public class Main {
         for (int i = 0; i < doorList.size(); i++) {
             if (doorList.get(i).hasGoat && !doorList.get(i).isPlayerDoor) {
                 doorList.remove(i);
-                System.out.println(doorList.size());
+                break;
 
             }
         }
-
-
 
         //simulates the switch of the chosen door after reveal
 
@@ -61,6 +59,7 @@ public class Main {
         } else if ((!doorList.get(0).isPlayerDoor && doorList.get(1).isPlayerDoor)) {
             doorList.get(0).setPlayerDoor(true);
             doorList.get(1).setPlayerDoor(false);
+        }
 
 
             // reveals whether player won after switching doors and adds list to count
@@ -69,11 +68,12 @@ public class Main {
 
                 if (doorList.get(i).isPlayerDoor && doorList.get(i).hasCar) {
                     winsWithSwitching++;
+                    
 
                 }
             }
         }
-    }
+
 
     private void runStaySimulation() {
         assignDoors();
