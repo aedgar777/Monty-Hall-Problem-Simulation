@@ -14,11 +14,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        new Main().run100000simulations();
+        new Main().runSimulation(1000000);
     }
 
-    public void run100000simulations() {
-        for (int i = 0; i < 100000; i++) {
+    public void runSimulation(int timesToRun) {
+        for (int i = 0; i < timesToRun; i++) {
             runSwitchSimulation();
             runStaySimulation();
             totalPlays++;
@@ -68,7 +68,7 @@ public class Main {
 
                 if (doorList.get(i).isPlayerDoor && doorList.get(i).hasCar) {
                     winsWithSwitching++;
-                    
+
 
                 }
             }
@@ -97,7 +97,6 @@ public class Main {
         }
 
         //reveals if player original choice was correct
-
 
         for (int i = 0; i < doorList.size(); i++) {
             if (doorList.get(i).isPlayerDoor && doorList.get(i).hasCar) {
@@ -128,7 +127,6 @@ public class Main {
                 door3 = new Door("Door 3", false, true, false);
                 break;
         }
-
 
     }
 
